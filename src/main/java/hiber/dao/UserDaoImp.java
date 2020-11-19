@@ -5,7 +5,9 @@ import hiber.model.Car;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import java.util.List;
 
@@ -39,15 +41,12 @@ public class UserDaoImp implements UserDao {
         return query.getResultList();
     }
 
-    String hql = "FROM User where Car = :model";
-    String hql2 = "FROM User where Car = :series";
-
     @Override
     public List<User> listHQLModelAndSeries() {
         String hql = "FROM User users LEFT JOIN FETCH users.car WHERE users.car=:model and users.car=:series";
-        TypedQuery<User> query = sessionFactory.getCurrentSession().createQuery(hql, User.class);
-        query.setParameter("Kia", "model");
-        query.setParameter(15, "series");
+        Query query = sessionFactory.getCurrentSession().createQuery(hql, User.class);
+        query.setParameter("model", "Kia");
+        query.setParameter("series", 15);
         List<User> users = query.getResultList();
         return users;
     }

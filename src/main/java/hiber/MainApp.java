@@ -27,8 +27,10 @@ public class MainApp {
         userService.add(new User("User3", "Lastname3", "user3@mail.ru", new Car("Kia", 15)));
         userService.add(new User("User4", "Lastname4", "user4@mail.ru", new Car("Jeep", 34)));
 
-
         List<User> users = userService.listUsers();
+        List<User> usersModelandSeries = userService.listHQLModelAndSeries();
+
+
         for (User user : users) {
             if (users.isEmpty()) {
                 System.out.println("Id = " + user.getId());
@@ -38,6 +40,7 @@ public class MainApp {
                 System.out.println();
             }
         }
+
         context.close();
     }
 }

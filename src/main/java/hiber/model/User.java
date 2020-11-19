@@ -1,11 +1,10 @@
 package hiber.model;
-
+import javax.jws.soap.SOAPBinding;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -18,6 +17,7 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
 
     @OneToOne
     @JoinColumn(name = "car_id")

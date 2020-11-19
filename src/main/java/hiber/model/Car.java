@@ -1,11 +1,15 @@
 package hiber.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table(name = "car")
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -17,8 +21,15 @@ public class Car {
     @Column(name = "series")
     private int series;
 
-
     public Car() {
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 
     public Car(String model, int series) {
