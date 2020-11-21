@@ -11,7 +11,7 @@ public interface UserDao {
 
     List<User> listUsers();
     List<User> listUsers2();
-    List<User> listHQLModelAndSeries();
+    List<User> listHQLModelAndSeries(String name, int series);
 }
 
 

@@ -1,6 +1,5 @@
 package hiber.service;
 
-
 import hiber.dao.CarsDao;
 import hiber.dao.UserDao;
 import hiber.model.User;
@@ -36,6 +35,6 @@ public class UserServiceImp implements UserService {
     @Transactional
     @Override
     public List<User> listHQLModelAndSeries() {
-        return userDao.listHQLModelAndSeries();
+        return userDao.listHQLModelAndSeries("Kia", 212);
     }
 }
