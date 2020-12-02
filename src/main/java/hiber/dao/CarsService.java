@@ -1,4 +1,4 @@
-package hiber.service;
+package hiber.dao;
 
 import hiber.model.User;
 import hiber.model.Car;

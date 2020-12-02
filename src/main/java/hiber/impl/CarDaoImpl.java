@@ -1,5 +1,6 @@
-package hiber.dao;
+package hiber.impl;
 
+import hiber.dao.CarsDao;
 import hiber.model.User;
 import org.hibernate.SessionFactory;
 import hiber.model.Car;
